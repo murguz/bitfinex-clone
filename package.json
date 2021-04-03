@@ -1,0 +1,34 @@
+{
+  "name": "bitfinex-clone",
+  "version": "1.0.0",
+  "description": "Project to create basic functionalities of Ticker, OrderBook and Trades of Bitfinex",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murguz/bitfinex-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murguz/bitfinex-clone/issues"
+  },
+  "homepage": "https://github.com/murguz/bitfinex-clone#readme",
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.32.8",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "mobx": "^6.1.8",
+    "mobx-react": "^7.1.0",
+    "moment": "^2.29.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+$primary_background: #273640;
+$secondary_background: #1b262d;
+$primary_text_color: #ffffff;
+$buy-color: #03ca9b;
+$sell-color: #f05359;
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 980px;
+    margin: 0 auto;
+    background: $primary_background;
+    color: $primary_text_color;
+}
+
+.bitfinex {
+    display: flex;
+    flex-direction: column;
+
+    .action-btns {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-top: 10px;
+
+        .toggle-btn {
+            padding: 5px 10px;
+            background-color: rgba($buy-color, $alpha: 0.5);
+            cursor: pointer;
+            border-radius: 3px;
+
+            &:hover {
+                background-color: rgba($buy-color, $alpha: 0.7);
+            }
+
+            &.disconnect {
+                background-color: rgba($sell-color, $alpha: 0.5);
+
+                &:hover {
+                    background-color: rgba($sell-color, $alpha: 0.7);
+                }
+            }
+        }
+    }
+
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+
+        .spacer {
+            &-ten {
+                flex: 0 0 10px;
+            }
+        }
+
+        .ticker {
+            display: flex;
+            flex-direction: row;
+            flex: 0 0 50px;
+            background-color: $secondary_background;
+
+            .logo {
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+
+                .bitfinex-logo {
+                    background-size: contain !important;
+                    background-repeat: no-repeat !important;
+                    background-position: 50% 50% !important;
+                    display: block;
+
+                    width: 40px;
+                    height: 40px;
+                    flex: 0 0 40px;
+                    background-image: url("https://static.bitfinex.com/images/icons/BTC-alt.svg");
+                }
+            }
+
+            .btc-usd,
+            .volume,
+            .low-high {
+                flex: 1;
+                padding-left: 20px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                line-height: 22px;
+                font-size: 12px;
+            }
+
+            .volume {
+                .increase {
+                    color: $buy-color;
+                }
+
+                .decrease {
+                    color: $sell-color;
+                }
+            }
+        }
+
+        .books,
+        .trades {
+            width: 100%;
+            background-color: $secondary_background;
+
+            table {
+                width: 100%;
+            }
+
+            thead tr th:first-child,
+            tbody tr td:first-child {
+                width: 15px;
+                min-width: 150px;
+                max-width: 150px;
+            }
+
+            tr.buy {
+                background-color: rgba($buy-color, .2);
+            }
+
+            tr.sell {
+                background-color: rgba($sell-color, .2);
+            }
+
+            td {
+                text-align: right;
+                padding-right: 10px;
+            }
+        }
+    }
+}
